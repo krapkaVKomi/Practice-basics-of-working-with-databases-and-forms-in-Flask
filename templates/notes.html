@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+<h1>Add Note</h1>
+
+<form action="/" method="post">
+    <input type="text" name="name", placeholder="Name"><br>
+    <textarea id="myTextarea" name="note" rows="4" cols="50", placeholder="My note">
+    </textarea><br>
+    <input type="submit" value="Save">
+</form><br><hr>
+
+<h2>Last 10 notes:</h2>
+<ul>
+    {% for note in notes %}
+        <li>{{ note[1] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
